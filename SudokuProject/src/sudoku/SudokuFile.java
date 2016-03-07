@@ -122,4 +122,26 @@ public class SudokuFile {
 		}
 		return sb.toString();
 	}
+	
+	public String toTuple()
+	{
+		StringBuilder sb = new StringBuilder("(");
+		
+		for (int i = 0; i < N; i++)
+		{
+			for(int j = 0; j < N; j++)
+			{
+				sb.append(Odometer.intToOdometer(board[i][j]));
+				if(i == N-1 && j == N-1)
+				{
+					sb.append(")");
+				}
+				else
+				{
+					sb.append(",");
+				}
+			}
+		}
+		return sb.toString();
+	}
 }
